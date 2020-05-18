@@ -1,0 +1,31 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "APCA-API-KEY-ID": "***",
+        "APCA-API-SECRET-KEY": "***"
+      },
+      "method": "get",
+      "options": {
+        "recv_timeout": 30000
+      },
+      "request_body": "",
+      "url": "https://paper-api.alpaca.markets/v2/account"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"id\":\"27102f1a-1bf0-4a2b-be65-aac7868edb41\",\"ACCOUNT_NUMBER\":\"PA2XNN7L2QU0\",\"status\":\"ACTIVE\",\"currency\":\"USD\",\"buying_power\":\"400000\",\"regt_buying_power\":\"200000\",\"daytrading_buying_power\":\"400000\",\"cash\":\"100000\",\"portfolio_value\":\"100000\",\"pattern_day_trader\":false,\"trading_blocked\":false,\"transfers_blocked\":false,\"account_blocked\":false,\"created_at\":\"2020-05-17T05:19:56.006674Z\",\"trade_suspended_by_user\":false,\"multiplier\":\"4\",\"shorting_enabled\":true,\"equity\":\"100000\",\"last_equity\":\"100000\",\"long_market_value\":\"0\",\"short_market_value\":\"0\",\"initial_margin\":\"0\",\"maintenance_margin\":\"0\",\"last_maintenance_margin\":\"0\",\"sma\":\"0\",\"daytrade_count\":0}",
+      "headers": {
+        "Server": "nginx/1.16.1",
+        "Date": "Mon, 18 May 2020 04:04:28 GMT",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Content-Length": "655",
+        "Connection": "keep-alive",
+        "Vary": "Origin"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

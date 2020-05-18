@@ -1,0 +1,31 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "APCA-API-KEY-ID": "***",
+        "APCA-API-SECRET-KEY": "***"
+      },
+      "method": "get",
+      "options": {
+        "recv_timeout": 30000
+      },
+      "request_body": "",
+      "url": "https://paper-api.alpaca.markets/v2/account"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"code\":40110000,\"message\":\"access key verification failed : verification failure\"}",
+      "headers": {
+        "Server": "nginx/1.16.1",
+        "Date": "Thu, 21 May 2020 02:57:58 GMT",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Content-Length": "83",
+        "Connection": "keep-alive",
+        "Vary": "Origin"
+      },
+      "status_code": 401,
+      "type": "ok"
+    }
+  }
+]
