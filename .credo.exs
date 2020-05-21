@@ -121,9 +121,7 @@
         {Credo.Check.Refactor.Nesting, []},
         {Credo.Check.Refactor.PipeChainStart,
          [
-           excluded_argument_types: [:atom, :binary, :fn, :keyword, :number],
-           # It is frequent to pipe an Ecto.Query query into a Repo function.
-           excluded_functions: ["from", "Multi.new", "Brex.Multi.new"]
+           excluded_argument_types: [:atom, :binary, :fn, :keyword, :number]
          ]},
         {Credo.Check.Refactor.UnlessWithElse, []},
         {Credo.Check.Refactor.WithClauses, false},
