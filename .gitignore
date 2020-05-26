@@ -24,3 +24,5 @@ alpaca_elixir-*.tar
 
 .env
 
+.DS_Store
+

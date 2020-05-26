@@ -1,0 +1,32 @@
+[
+  {
+    "request": {
+      "body": "{\"qty\":3}",
+      "headers": {
+        "APCA-API-KEY-ID": "***",
+        "APCA-API-SECRET-KEY": "***",
+        "content-type": "application/json"
+      },
+      "method": "patch",
+      "options": {
+        "recv_timeout": 30000
+      },
+      "request_body": "",
+      "url": "https://paper-api.alpaca.markets/v2/orders/ebfc1c74-fd4a-46e1-b4e7-7f6f8ab1ef7a"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"code\":40010001,\"message\":\"unable to replace order, order isn't sent to exchange yet\"}",
+      "headers": {
+        "Server": "nginx/1.16.1",
+        "Date": "Mon, 25 May 2020 04:59:30 GMT",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Content-Length": "87",
+        "Connection": "keep-alive",
+        "Vary": "Origin"
+      },
+      "status_code": 422,
+      "type": "ok"
+    }
+  }
+]

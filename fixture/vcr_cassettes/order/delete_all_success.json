@@ -1,0 +1,31 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "APCA-API-KEY-ID": "***",
+        "APCA-API-SECRET-KEY": "***"
+      },
+      "method": "delete",
+      "options": {
+        "recv_timeout": 30000
+      },
+      "request_body": "",
+      "url": "https://paper-api.alpaca.markets/v2/orders"
+    },
+    "response": {
+      "binary": false,
+      "body": "[{\"id\":\"49aa1811-be1e-400a-9375-f14b5ac28ddf\",\"status\":200,\"body\":{\"asset_class\":\"us_equity\",\"asset_id\":\"8ccae427-5dd0-45b3-b5fe-7ba5e422c766\",\"canceled_at\":null,\"client_order_id\":\"2a537ca1-ba25-4e66-9266-6e87c1cdcb8d\",\"created_at\":\"2020-05-24T22:25:12.233451Z\",\"expired_at\":null,\"extended_hours\":false,\"failed_at\":null,\"filled_at\":null,\"filled_avg_price\":null,\"filled_qty\":\"0\",\"id\":\"49aa1811-be1e-400a-9375-f14b5ac28ddf\",\"legs\":null,\"limit_price\":null,\"order_class\":\"\",\"order_type\":\"market\",\"qty\":\"1\",\"replaced_at\":null,\"replaced_by\":null,\"replaces\":null,\"side\":\"buy\",\"status\":\"pending_cancel\",\"stop_price\":null,\"submitted_at\":\"2020-05-24T22:25:12.221954Z\",\"symbol\":\"TSLA\",\"time_in_force\":\"day\",\"type\":\"market\",\"updated_at\":\"2020-05-25T05:09:37.011088435Z\"}},{\"id\":\"ebfc1c74-fd4a-46e1-b4e7-7f6f8ab1ef7a\",\"status\":200,\"body\":{\"asset_class\":\"us_equity\",\"asset_id\":\"b0b6dd9d-8b9b-48a9-ba46-b9d54906e415\",\"canceled_at\":null,\"client_order_id\":\"e08ad98f-07a4-40a8-9b6e-7186b0b7dd8d\",\"created_at\":\"2020-05-24T01:08:24.888924Z\",\"expired_at\":null,\"extended_hours\":false,\"failed_at\":null,\"filled_at\":null,\"filled_avg_price\":null,\"filled_qty\":\"0\",\"id\":\"ebfc1c74-fd4a-46e1-b4e7-7f6f8ab1ef7a\",\"legs\":null,\"limit_price\":null,\"order_class\":\"\",\"order_type\":\"market\",\"qty\":\"1\",\"replaced_at\":null,\"replaced_by\":null,\"replaces\":null,\"side\":\"buy\",\"status\":\"pending_cancel\",\"stop_price\":null,\"submitted_at\":\"2020-05-24T01:08:24.881019Z\",\"symbol\":\"AAPL\",\"time_in_force\":\"day\",\"type\":\"market\",\"updated_at\":\"2020-05-25T05:09:37.017691461Z\"}}]",
+      "headers": {
+        "Server": "nginx/1.16.1",
+        "Date": "Mon, 25 May 2020 05:09:37 GMT",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Content-Length": "1519",
+        "Connection": "keep-alive",
+        "Vary": "Origin"
+      },
+      "status_code": 207,
+      "type": "ok"
+    }
+  }
+]

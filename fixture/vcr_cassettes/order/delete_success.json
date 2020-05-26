@@ -1,0 +1,30 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "APCA-API-KEY-ID": "***",
+        "APCA-API-SECRET-KEY": "***"
+      },
+      "method": "delete",
+      "options": {
+        "recv_timeout": 30000
+      },
+      "request_body": "",
+      "url": "https://paper-api.alpaca.markets/v2/orders/d2ddd83c-63f5-42d4-801b-58e1be01327b"
+    },
+    "response": {
+      "binary": false,
+      "body": "",
+      "headers": {
+        "Server": "nginx/1.16.1",
+        "Date": "Mon, 25 May 2020 05:23:07 GMT",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Connection": "keep-alive",
+        "Vary": "Origin"
+      },
+      "status_code": 204,
+      "type": "ok"
+    }
+  }
+]

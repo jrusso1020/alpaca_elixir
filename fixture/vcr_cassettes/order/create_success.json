@@ -1,0 +1,32 @@
+[
+  {
+    "request": {
+      "body": "{\"qty\":1,\"side\":\"buy\",\"symbol\":\"TSLA\",\"time_in_force\":\"day\",\"type\":\"market\"}",
+      "headers": {
+        "APCA-API-KEY-ID": "***",
+        "APCA-API-SECRET-KEY": "***",
+        "content-type": "application/json"
+      },
+      "method": "post",
+      "options": {
+        "recv_timeout": 30000
+      },
+      "request_body": "",
+      "url": "https://paper-api.alpaca.markets/v2/orders"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"id\":\"49aa1811-be1e-400a-9375-f14b5ac28ddf\",\"client_order_id\":\"2a537ca1-ba25-4e66-9266-6e87c1cdcb8d\",\"created_at\":\"2020-05-24T22:25:12.233451Z\",\"updated_at\":\"2020-05-24T22:25:12.233451Z\",\"submitted_at\":\"2020-05-24T22:25:12.221954Z\",\"filled_at\":null,\"expired_at\":null,\"canceled_at\":null,\"failed_at\":null,\"replaced_at\":null,\"replaced_by\":null,\"replaces\":null,\"asset_id\":\"8ccae427-5dd0-45b3-b5fe-7ba5e422c766\",\"symbol\":\"TSLA\",\"asset_class\":\"us_equity\",\"qty\":\"1\",\"filled_qty\":\"0\",\"filled_avg_price\":null,\"order_class\":\"\",\"order_type\":\"market\",\"type\":\"market\",\"side\":\"buy\",\"time_in_force\":\"day\",\"limit_price\":null,\"stop_price\":null,\"status\":\"accepted\",\"extended_hours\":false,\"legs\":null}",
+      "headers": {
+        "Server": "nginx/1.16.1",
+        "Date": "Sun, 24 May 2020 22:25:12 GMT",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Content-Length": "683",
+        "Connection": "keep-alive",
+        "Vary": "Origin"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

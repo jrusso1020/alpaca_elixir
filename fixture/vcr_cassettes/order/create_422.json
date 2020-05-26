@@ -1,0 +1,32 @@
+[
+  {
+    "request": {
+      "body": "{\"qty\":1,\"side\":\"buy\",\"symbol\":\"FACEBOOK\",\"time_in_force\":\"day\",\"type\":\"market\"}",
+      "headers": {
+        "APCA-API-KEY-ID": "***",
+        "APCA-API-SECRET-KEY": "***",
+        "content-type": "application/json"
+      },
+      "method": "post",
+      "options": {
+        "recv_timeout": 30000
+      },
+      "request_body": "",
+      "url": "https://paper-api.alpaca.markets/v2/orders"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"code\":40010001,\"message\":\"could not find asset \\\"FACEBOOK\\\"\"}",
+      "headers": {
+        "Server": "nginx/1.16.1",
+        "Date": "Tue, 26 May 2020 05:29:06 GMT",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Content-Length": "63",
+        "Connection": "keep-alive",
+        "Vary": "Origin"
+      },
+      "status_code": 422,
+      "type": "ok"
+    }
+  }
+]

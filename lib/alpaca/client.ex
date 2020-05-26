@@ -5,6 +5,19 @@ defmodule Alpaca.Client do
   This client allows us to define all of our HTTP request logic and configuration
   in one place so that we can easily change or adapt this away from all of the other
   business logic of our library.
+
+  We have access to HTTP request types on this client and it will automatically use a base
+  url as well as set all the necessary headers for us.
+
+  We have access to GET, POST, PATCH, and DELETE HTTP requests using this client.
+
+  ### Example usage
+  ```
+  Alpaca.Client.get("/path", %{query_param: "value"})
+  Alpaca.Client.post("/path", %{param1: "value"})
+  Alpaca.Client.patch("/path", %{param1: "value"})
+  Alpaca.Client.delete("/path")
+  ```
   """
 
   defmodule MissingCredentialsError do
@@ -21,7 +34,7 @@ defmodule Alpaca.Client do
   end
 
   @spec client_id(atom) :: String.t()
-  def client_id(env_key \\ :client_id) do
+  defp client_id(env_key \\ :client_id) do
     case Confex.get_env(:alpaca_elixir, env_key, System.get_env("ALPACA_CLIENT_ID")) || :not_found do
       :not_found -> raise MissingCredentialsError
       value -> value
@@ -29,7 +42,7 @@ defmodule Alpaca.Client do
   end
 
   @spec client_secret(atom) :: String.t()
-  def client_secret(env_key \\ :client_secret) do
+  defp client_secret(env_key \\ :client_secret) do
     case Confex.get_env(:alpaca_elixir, env_key, System.get_env("ALPACA_CLIENT_SECRET")) ||
            :not_found do
       :not_found -> raise MissingCredentialsError
@@ -38,18 +51,64 @@ defmodule Alpaca.Client do
   end
 
   @spec api_host :: String.t()
-  def api_host,
+  defp api_host,
     do: Application.get_env(:alpaca_elixir, :api_host, System.get_env("ALPACA_API_HOST"))
 
-  def get(url) do
+  @doc """
+  Issue a get request using the HTTP client
+
+  Accepts path which is the url path of the request, will be added to the end of the base_url
+  and a map of params which will become the query list for the get request
+  """
+  def get(path, params \\ %{}) do
     create()
-    |> Tesla.get(url)
+    |> Tesla.get(path, query: map_to_klist(params))
   end
+
+  @doc """
+  Issue a post request using the HTTP client
+
+  Accepts path which is the url path of the request, will be added to the end of the base_url
+  and a map of params which will be the body of the post request
+  """
+  def post(path, params \\ %{}) do
+    create()
+    |> Tesla.post(path, params)
+  end
+
+  @doc """
+  Issue a patch request using the HTTP client
+
+  Accepts path which is the url path of the request, will be added to the end of the base_url
+  and a map of params which will be the body of the post request
+  """
+  def patch(path, params \\ %{}) do
+    create()
+    |> Tesla.patch(path, params)
+  end
+
+  @doc """
+  Issue a delete request using the HTTP client
+
+  Accepts path which is the url path of the request, will be added to the end of the base_url
+  """
+  def delete(path) do
+    create()
+    |> Tesla.delete(path)
+  end
+
+  defp map_to_klist(dict) do
+    Enum.map(dict, fn {key, value} -> {to_atom(key), value} end)
+  end
+
+  defp to_atom(atom) when is_atom(atom), do: atom
+  defp to_atom(string), do: String.to_atom(string)
 
   defp create() do
     middleware = [
       {Tesla.Middleware.BaseUrl, api_host()},
       {Tesla.Middleware.Headers, default_headers()},
+      Tesla.Middleware.EncodeJson,
       Alpaca.ResponseMiddleware
     ]
 

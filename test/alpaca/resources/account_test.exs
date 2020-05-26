@@ -6,7 +6,7 @@ defmodule Alpaca.AccountTest do
 
   describe "get/0" do
     test "gets the account successfully" do
-      use_cassette "account_success" do
+      use_cassette "account/get_success" do
         assert {:ok, %Account{} = account} = Account.get()
 
         assert not is_nil(account.id)
@@ -14,10 +14,15 @@ defmodule Alpaca.AccountTest do
     end
 
     test "handles error" do
-      use_cassette "account_failure" do
-        assert {:error, %{status: 401, body: body}} = Account.get()
-
-        assert body.message == "access key verification failed : verification failure"
+      use_cassette "account/get_failure" do
+        assert {:error,
+                %{
+                  status: 401,
+                  body: %{
+                    code: 40_110_000,
+                    message: "access key verification failed : verification failure"
+                  }
+                }} = Account.get()
       end
     end
   end
