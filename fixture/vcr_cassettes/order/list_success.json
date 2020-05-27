@@ -1,0 +1,31 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "APCA-API-KEY-ID": "***",
+        "APCA-API-SECRET-KEY": "***"
+      },
+      "method": "get",
+      "options": {
+        "recv_timeout": 30000
+      },
+      "request_body": "",
+      "url": "https://paper-api.alpaca.markets/v2/orders?status=all"
+    },
+    "response": {
+      "binary": false,
+      "body": "[{\"id\":\"ebfc1c74-fd4a-46e1-b4e7-7f6f8ab1ef7a\",\"client_order_id\":\"e08ad98f-07a4-40a8-9b6e-7186b0b7dd8d\",\"created_at\":\"2020-05-24T01:08:24.888924Z\",\"updated_at\":\"2020-05-24T01:08:24.888924Z\",\"submitted_at\":\"2020-05-24T01:08:24.881019Z\",\"filled_at\":null,\"expired_at\":null,\"canceled_at\":null,\"failed_at\":null,\"replaced_at\":null,\"replaced_by\":null,\"replaces\":null,\"asset_id\":\"b0b6dd9d-8b9b-48a9-ba46-b9d54906e415\",\"symbol\":\"AAPL\",\"asset_class\":\"us_equity\",\"qty\":\"1\",\"filled_qty\":\"0\",\"filled_avg_price\":null,\"order_class\":\"\",\"order_type\":\"market\",\"type\":\"market\",\"side\":\"buy\",\"time_in_force\":\"day\",\"limit_price\":null,\"stop_price\":null,\"status\":\"accepted\",\"extended_hours\":false,\"legs\":null}]",
+      "headers": {
+        "Server": "nginx/1.16.1",
+        "Date": "Sun, 24 May 2020 01:30:43 GMT",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Content-Length": "685",
+        "Connection": "keep-alive",
+        "Vary": "Origin"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

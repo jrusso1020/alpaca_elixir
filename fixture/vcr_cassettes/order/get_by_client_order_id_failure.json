@@ -1,0 +1,31 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "APCA-API-KEY-ID": "***",
+        "APCA-API-SECRET-KEY": "***"
+      },
+      "method": "get",
+      "options": {
+        "recv_timeout": 30000
+      },
+      "request_body": "",
+      "url": "https://paper-api.alpaca.markets/v2/orders:by_client_order_id?client_order_id=b0b6dd9d-8b9b-48a9-ba46-b9d54906e415"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"code\":40410000,\"message\":\"order not found for b0b6dd9d-8b9b-48a9-ba46-b9d54906e415\"}",
+      "headers": {
+        "Server": "nginx/1.16.1",
+        "Date": "Tue, 26 May 2020 05:39:16 GMT",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Content-Length": "86",
+        "Connection": "keep-alive",
+        "Vary": "Origin"
+      },
+      "status_code": 404,
+      "type": "ok"
+    }
+  }
+]

@@ -11,7 +11,7 @@ defmodule Alpaca.ResponseMiddleware do
   ### Example usage
 
   ```
-  defmodule AlpavaClient do
+  defmodule Alpaca.Client do
     use Tesla
 
     plug Alpaca.ResponseMiddleware
@@ -31,6 +31,9 @@ defmodule Alpaca.ResponseMiddleware do
 
   defp handle_response({:ok, response}) do
     case response.status do
+      204 ->
+        :ok
+
       status when status in 200..299 ->
         {:ok, Jason.decode!(response.body, keys: :atoms)}
 
