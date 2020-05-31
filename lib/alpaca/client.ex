@@ -41,7 +41,7 @@ defmodule Alpaca.Client do
     end
   end
 
-  @spec client_secret(atom) :: String.t()
+  @spec client_secret(atom()) :: String.t()
   defp client_secret(env_key \\ :client_secret) do
     case Confex.get_env(:alpaca_elixir, env_key, System.get_env("ALPACA_CLIENT_SECRET")) ||
            :not_found do
@@ -60,6 +60,7 @@ defmodule Alpaca.Client do
   Accepts path which is the url path of the request, will be added to the end of the base_url
   and a map of params which will become the query list for the get request
   """
+  @spec get(String.t(), map()) :: {:ok, map()} | {:error, map()}
   def get(path, params \\ %{}) do
     create()
     |> Tesla.get(path, query: map_to_klist(params))
@@ -71,6 +72,7 @@ defmodule Alpaca.Client do
   Accepts path which is the url path of the request, will be added to the end of the base_url
   and a map of params which will be the body of the post request
   """
+  @spec post(String.t(), map()) :: {:ok, map()} | {:error, map()}
   def post(path, params \\ %{}) do
     create()
     |> Tesla.post(path, params)
@@ -82,6 +84,7 @@ defmodule Alpaca.Client do
   Accepts path which is the url path of the request, will be added to the end of the base_url
   and a map of params which will be the body of the post request
   """
+  @spec patch(String.t(), map()) :: {:ok, map()} | {:error, map()}
   def patch(path, params \\ %{}) do
     create()
     |> Tesla.patch(path, params)
@@ -92,6 +95,7 @@ defmodule Alpaca.Client do
 
   Accepts path which is the url path of the request, will be added to the end of the base_url
   """
+  @spec delete(String.t()) :: {:ok, map()} | {:error, map()}
   def delete(path) do
     create()
     |> Tesla.delete(path)

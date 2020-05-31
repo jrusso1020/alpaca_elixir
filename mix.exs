@@ -11,7 +11,16 @@ defmodule AlpacaElixir.MixProject do
       test_coverage: [tool: ExCoveralls],
       description: "Alpaca Elixir Library",
       package: package(),
-      deps: deps()
+      deps: deps(),
+
+      # Docs
+      name: "AlpacaElixir",
+      source_url: "https://github.com/jrusso1020/alpaca-elixir",
+      homepage_url: "https://github.com/jrusso1020/alpaca-elixir",
+      docs: [
+        main: "AlpacaElixir",
+        extra: ["README.md"]
+      ]
     ]
   end
 
@@ -31,6 +40,7 @@ defmodule AlpacaElixir.MixProject do
       {:excoveralls, "~> 0.10", only: :test},
       {:exvcr, "~> 0.11", only: :test},
       {:hackney, "~> 1.15.2"},
+      {:ex_doc, "~> 0.22", only: :dev, runtime: false},
       {:jason, "~> 1.2"},
       {:tesla, "~> 1.3.0"},
       {:typed_struct, "~> 0.1.4"}

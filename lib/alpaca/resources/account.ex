@@ -44,7 +44,7 @@ defmodule Alpaca.Account do
   Allows us to retrieve our own account information as a result tuple {:ok, %Account{}}
   if successful. If not success we will get back a result tuple {:error, {status: http_status_code, body: http_response_body}}
   """
-  @spec get() :: {:ok, __MODULE__.t()} | {:error, Map.t()}
+  @spec get() :: {:ok, __MODULE__.t()} | {:error, map()}
   def get() do
     with {:ok, account} <- Client.get("/v2/account") do
       {:ok, struct(__MODULE__, account)}
