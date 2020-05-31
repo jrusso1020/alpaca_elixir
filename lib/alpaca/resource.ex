@@ -42,7 +42,7 @@ defmodule Alpaca.Resource do
         @doc """
         A function to list all resources from the Alpaca API
         """
-        @spec list(Map.t()) :: {:ok, [__MODULE__.t()]} | {:error, Map.t()}
+        @spec list(map()) :: {:ok, [__MODULE__.t()]} | {:error, map()}
         def list(params \\ %{}) do
           with {:ok, resources} <- Client.get(base_url(), params) do
             {:ok, Enum.map(resources, fn resource -> struct(__MODULE__, resource) end)}
@@ -54,7 +54,7 @@ defmodule Alpaca.Resource do
         @doc """
         A function to get a singlular resource from the Alpaca API
         """
-        @spec get(String.t(), Map.t()) :: {:ok, __MODULE__.t()} | {:error, Map.t()}
+        @spec get(String.t(), map()) :: {:ok, __MODULE__.t()} | {:error, map()}
         def get(id, params \\ %{}) do
           with {:ok, resource} <- Client.get(resource_url(id), params) do
             {:ok, struct(__MODULE__, resource)}
@@ -66,7 +66,7 @@ defmodule Alpaca.Resource do
         @doc """
         A function to create a new resource from the Alpaca API
         """
-        @spec create(Map.t()) :: {:ok, __MODULE__.t()} | {:error, Map.t()}
+        @spec create(map()) :: {:ok, __MODULE__.t()} | {:error, map()}
         def create(params) do
           with {:ok, resource} <- Client.post(base_url(), params) do
             {:ok, struct(__MODULE__, resource)}
@@ -78,7 +78,7 @@ defmodule Alpaca.Resource do
         @doc """
         A function to edit an existing resource using the Alpaca API
         """
-        @spec edit(String.t(), Map.t()) :: {:ok, __MODULE__.t()} | {:error, Map.t()}
+        @spec edit(String.t(), map()) :: {:ok, __MODULE__.t()} | {:error, map()}
         def edit(id, params) do
           with {:ok, resource} <- Client.patch(resource_url(id), params) do
             {:ok, struct(__MODULE__, resource)}
@@ -90,7 +90,7 @@ defmodule Alpaca.Resource do
         @doc """
         A function to delete all resources of a given type using the Alpaca API
         """
-        @spec delete_all() :: {:ok, [Map.t()]} | {:error, Map.t()}
+        @spec delete_all() :: {:ok, [map()]} | {:error, map()}
         def delete_all() do
           with {:ok, response_body} <- Client.delete(base_url()) do
             {:ok,
@@ -109,7 +109,7 @@ defmodule Alpaca.Resource do
         @doc """
         A function to delete a singular resource of a given type using the Alpaca API
         """
-        @spec(delete(String.t()) :: :ok, {:error, Map.t()})
+        @spec(delete(String.t()) :: :ok, {:error, map()})
         def delete(id) do
           with :ok <- Client.delete(resource_url(id)) do
             :ok

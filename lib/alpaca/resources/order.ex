@@ -13,27 +13,27 @@ defmodule Alpaca.Order do
   get_by_client_order_id/1
   ```
 
-  The `get/1` method allows us to get a singular order by calling `Order.get(id)`.
+  The `get/1` method allows us to get a singular order by calling `Alpaca.Order.get(id)`.
   Where `id` is the id of the order to get.
 
-  The `list/1` method allows us to list all orders by calling `Order.list(params)`.
+  The `list/1` method allows us to list all orders by calling `Alpaca.Order.list(params)`.
   Where `params` is a Map of optional params you can use to retrieve orders
   defined in the Alpaca API documentation
 
-  The `create/1` method allows us to create a new order by calling `Order.create(params)`.
+  The `create/1` method allows us to create a new order by calling `Alpaca.Order.create(params)`.
   Where `params` is the Map of parameters to create the order
 
-  The `edit/2` method allows us to edit a specific order by calling `Order.edit(id, params)`.
+  The `edit/2` method allows us to edit a specific order by calling `Alpaca.Order.edit(id, params)`.
   Where `id` is the id of the order and `params` are the parameters of the order we want to
   change defined by the Alpaca API documentation.
 
-  The `delete_all/0` method allows us to delete all open orders by calling `Order.delete_all()`.
+  The `delete_all/0` method allows us to delete all open orders by calling `Alpaca.Order.delete_all()`.
 
-  The `delete/1` method allows us to delete a specific order by calling `Order.delete(id)`.
+  The `delete/1` method allows us to delete a specific order by calling `Alpaca.Order.delete(id)`.
   Where id is the id of the order we want to delete.
 
   The `get_by_client_order_id/1` method allows us to get a specific order by the client order id by calling
-  Order.get_by_client_order_id(client_order_id)`. Where client_order_id is the client order id on the order.
+  `Alpaca.Order.get_by_client_order_id(client_order_id)`. Where client_order_id is the client order id on the order.
   """
   use Alpaca.Resource, endpoint: "orders"
   use TypedStruct
@@ -73,12 +73,14 @@ defmodule Alpaca.Order do
   Retrieve an order by client order id
 
   ### Example
+  ```
     iex> {:ok, %Order{} = order} = Order.get_by_client_order_id(client_order_id)
+  ```
 
-  Allows us to retrieve our an order as a result tuple {:ok, %Order{}}
-  if successful. If not success we will get back a result tuple {:error, {status: http_status_code, body: http_response_body}}
+  Allows us to retrieve our an order as a result tuple `{:ok, %Alpaca.Order{}}`
+  if successful. If not success we will get back a result tuple `{:error, {status: http_status_code, body: http_response_body}}`
   """
-  @spec get_by_client_order_id(String.t()) :: {:ok, __MODULE__.t()} | {:error, Map.t()}
+  @spec get_by_client_order_id(String.t()) :: {:ok, __MODULE__.t()} | {:error, map()}
   def get_by_client_order_id(client_order_id) do
     case Client.get("/v2/orders:by_client_order_id", %{client_order_id: client_order_id}) do
       {:ok, order} ->
