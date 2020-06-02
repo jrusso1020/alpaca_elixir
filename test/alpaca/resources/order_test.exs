@@ -9,7 +9,7 @@ defmodule Alpaca.OrderTest do
       use_cassette "order/list_success" do
         params = %{status: "all"}
 
-        assert {:ok, [%Order{} = order] = orders} = Order.list(params)
+        assert {:ok, [order] = orders} = Order.list(params)
         assert not is_nil(order.id)
       end
     end
@@ -20,7 +20,7 @@ defmodule Alpaca.OrderTest do
       use_cassette "order/get_success" do
         id = "ebfc1c74-fd4a-46e1-b4e7-7f6f8ab1ef7a"
 
-        assert {:ok, %Order{id: ^id} = order} = Order.get(id)
+        assert {:ok, %{id: ^id} = order} = Order.get(id)
       end
     end
 
@@ -55,7 +55,7 @@ defmodule Alpaca.OrderTest do
           time_in_force: "day"
         }
 
-        assert {:ok, %Order{} = order} = Order.create(params)
+        assert {:ok, order} = Order.create(params)
         assert not is_nil(order.id)
       end
     end
@@ -100,7 +100,7 @@ defmodule Alpaca.OrderTest do
       use_cassette "order/get_by_client_order_id_success" do
         client_order_id = "e08ad98f-07a4-40a8-9b6e-7186b0b7dd8d"
 
-        assert {:ok, %Order{client_order_id: ^client_order_id}} =
+        assert {:ok, %{client_order_id: ^client_order_id}} =
                  Order.get_by_client_order_id(client_order_id)
       end
     end
@@ -141,7 +141,7 @@ defmodule Alpaca.OrderTest do
         Enum.map(response, fn item ->
           assert item.status == 200
           assert not is_nil(item.id)
-          assert %Order{} = item.resource
+          assert not is_nil(item.resource)
         end)
       end
     end

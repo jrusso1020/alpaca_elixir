@@ -1,0 +1,31 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "APCA-API-KEY-ID": "***",
+        "APCA-API-SECRET-KEY": "***"
+      },
+      "method": "get",
+      "options": {
+        "recv_timeout": 30000
+      },
+      "request_body": "",
+      "url": "https://paper-api.alpaca.markets/v2/positions"
+    },
+    "response": {
+      "binary": false,
+      "body": "[{\"asset_id\":\"8ccae427-5dd0-45b3-b5fe-7ba5e422c766\",\"symbol\":\"TSLA\",\"exchange\":\"NASDAQ\",\"asset_class\":\"us_equity\",\"qty\":\"5\",\"avg_entry_price\":\"892.736\",\"side\":\"long\",\"market_value\":\"4411.95\",\"cost_basis\":\"4463.68\",\"unrealized_pl\":\"-51.73\",\"unrealized_plpc\":\"-0.0115890924080579\",\"unrealized_intraday_pl\":\"-51.73\",\"unrealized_intraday_plpc\":\"-0.0115890924080579\",\"current_price\":\"882.39\",\"lastday_price\":\"898.1\",\"change_today\":\"-0.01749248413317\"},{\"asset_id\":\"f30d734c-2806-4d0d-b145-f9fade61432b\",\"symbol\":\"GOOG\",\"exchange\":\"NASDAQ\",\"asset_class\":\"us_equity\",\"qty\":\"5\",\"avg_entry_price\":\"1431.01\",\"side\":\"long\",\"market_value\":\"7157.5\",\"cost_basis\":\"7155.05\",\"unrealized_pl\":\"2.45\",\"unrealized_plpc\":\"0.0003424154967471\",\"unrealized_intraday_pl\":\"2.45\",\"unrealized_intraday_plpc\":\"0.0003424154967471\",\"current_price\":\"1431.5\",\"lastday_price\":\"1431.82\",\"change_today\":\"-0.000223491779693\"},{\"asset_id\":\"b0b6dd9d-8b9b-48a9-ba46-b9d54906e415\",\"symbol\":\"AAPL\",\"exchange\":\"NASDAQ\",\"asset_class\":\"us_equity\",\"qty\":\"2\",\"avg_entry_price\":\"321.33\",\"side\":\"long\",\"market_value\":\"646.4\",\"cost_basis\":\"642.66\",\"unrealized_pl\":\"3.74\",\"unrealized_plpc\":\"0.0058195624435938\",\"unrealized_intraday_pl\":\"3.74\",\"unrealized_intraday_plpc\":\"0.0058195624435938\",\"current_price\":\"323.2\",\"lastday_price\":\"321.85\",\"change_today\":\"0.0041945005437316\"}]",
+      "headers": {
+        "Server": "nginx/1.16.1",
+        "Date": "Tue, 02 Jun 2020 23:45:50 GMT",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Content-Length": "1326",
+        "Connection": "keep-alive",
+        "Vary": "Accept-Encoding"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

@@ -42,11 +42,9 @@ defmodule Alpaca.Resource do
         @doc """
         A function to list all resources from the Alpaca API
         """
-        @spec list(map()) :: {:ok, [__MODULE__.t()]} | {:error, map()}
+        @spec list(map()) :: {:ok, [map()]} | {:error, map()}
         def list(params \\ %{}) do
-          with {:ok, resources} <- Client.get(base_url(), params) do
-            {:ok, Enum.map(resources, fn resource -> struct(__MODULE__, resource) end)}
-          end
+          Client.get(base_url(), params)
         end
       end
 
@@ -54,11 +52,9 @@ defmodule Alpaca.Resource do
         @doc """
         A function to get a singlular resource from the Alpaca API
         """
-        @spec get(String.t(), map()) :: {:ok, __MODULE__.t()} | {:error, map()}
+        @spec get(String.t(), map()) :: {:ok, map()} | {:error, map()}
         def get(id, params \\ %{}) do
-          with {:ok, resource} <- Client.get(resource_url(id), params) do
-            {:ok, struct(__MODULE__, resource)}
-          end
+          Client.get(resource_url(id), params)
         end
       end
 
@@ -66,11 +62,9 @@ defmodule Alpaca.Resource do
         @doc """
         A function to create a new resource from the Alpaca API
         """
-        @spec create(map()) :: {:ok, __MODULE__.t()} | {:error, map()}
+        @spec create(map()) :: {:ok, map()} | {:error, map()}
         def create(params) do
-          with {:ok, resource} <- Client.post(base_url(), params) do
-            {:ok, struct(__MODULE__, resource)}
-          end
+          Client.post(base_url(), params)
         end
       end
 
@@ -78,11 +72,9 @@ defmodule Alpaca.Resource do
         @doc """
         A function to edit an existing resource using the Alpaca API
         """
-        @spec edit(String.t(), map()) :: {:ok, __MODULE__.t()} | {:error, map()}
+        @spec edit(String.t(), map()) :: {:ok, map()} | {:error, map()}
         def edit(id, params) do
-          with {:ok, resource} <- Client.patch(resource_url(id), params) do
-            {:ok, struct(__MODULE__, resource)}
-          end
+          Client.patch(resource_url(id), params)
         end
       end
 
@@ -97,8 +89,8 @@ defmodule Alpaca.Resource do
              Enum.map(response_body, fn item ->
                %{
                  status: item.status,
-                 id: item.id,
-                 resource: delete_all_resource_body(item.body)
+                 id: item[:id] || item[:symbol],
+                 resource: item.body
                }
              end)}
           end
@@ -116,10 +108,6 @@ defmodule Alpaca.Resource do
           end
         end
       end
-
-      defp delete_all_resource_body(nil), do: nil
-
-      defp delete_all_resource_body(resource), do: struct(__MODULE__, resource)
 
       @spec base_url :: String.t()
       defp base_url, do: "/v2/#{unquote(endpoint)}"

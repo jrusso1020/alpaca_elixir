@@ -1,0 +1,31 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "APCA-API-KEY-ID": "***",
+        "APCA-API-SECRET-KEY": "***"
+      },
+      "method": "get",
+      "options": {
+        "recv_timeout": 30000
+      },
+      "request_body": "",
+      "url": "https://paper-api.alpaca.markets/v2/positions/AAPL"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"asset_id\":\"b0b6dd9d-8b9b-48a9-ba46-b9d54906e415\",\"symbol\":\"AAPL\",\"exchange\":\"NASDAQ\",\"asset_class\":\"us_equity\",\"qty\":\"2\",\"avg_entry_price\":\"321.33\",\"side\":\"long\",\"market_value\":\"646.7\",\"cost_basis\":\"642.66\",\"unrealized_pl\":\"4.04\",\"unrealized_plpc\":\"0.0062863722652725\",\"unrealized_intraday_pl\":\"4.04\",\"unrealized_intraday_plpc\":\"0.0062863722652725\",\"current_price\":\"323.35\",\"lastday_price\":\"321.85\",\"change_today\":\"0.0046605561597017\"}",
+      "headers": {
+        "Server": "nginx/1.16.1",
+        "Date": "Tue, 02 Jun 2020 23:47:49 GMT",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Content-Length": "437",
+        "Connection": "keep-alive",
+        "Vary": "Origin"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
