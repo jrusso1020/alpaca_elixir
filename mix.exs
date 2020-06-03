@@ -34,7 +34,6 @@ defmodule AlpacaElixir.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:bypass, "~> 1.0", only: :test},
       {:confex, "~> 3.4.0"},
       {:credo, "~> 1.4", only: [:dev, :test], runtime: false},
       {:excoveralls, "~> 0.10", only: :test},
@@ -42,8 +41,7 @@ defmodule AlpacaElixir.MixProject do
       {:hackney, "~> 1.15.2"},
       {:ex_doc, "~> 0.22", only: :dev, runtime: false},
       {:jason, "~> 1.2"},
-      {:tesla, "~> 1.3.0"},
-      {:typed_struct, "~> 0.1.4"}
+      {:tesla, "~> 1.3.0"}
     ]
   end
 

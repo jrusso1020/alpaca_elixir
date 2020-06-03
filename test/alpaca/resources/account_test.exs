@@ -7,7 +7,7 @@ defmodule Alpaca.AccountTest do
   describe "get/0" do
     test "gets the account successfully" do
       use_cassette "account/get_success" do
-        assert {:ok, %Account{} = account} = Account.get()
+        assert {:ok, account} = Account.get()
 
         assert not is_nil(account.id)
       end
