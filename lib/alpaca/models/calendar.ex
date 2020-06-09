@@ -13,7 +13,7 @@ defmodule Alpaca.Calendar do
   for the market days, taking into account early closures.
 
   You can pass optional `start` and/or `end` dates as params to the function to get specific
-  time ranges like so `Alpaca.Calendar.list(%{start: ~D[2020-02-10], end: ~D[2020-03-01]})
+  time ranges like so `Alpaca.Calendar.list(%{start: ~D[2020-02-10], end: ~D[2020-03-01]})`
   """
   use Alpaca.Resource, endpoint: "calendar", exclude: [:create, :edit, :delete, :delete_all, :get]
 end
