@@ -1,0 +1,31 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "APCA-API-KEY-ID": "***",
+        "APCA-API-SECRET-KEY": "***"
+      },
+      "method": "get",
+      "options": {
+        "recv_timeout": 30000
+      },
+      "request_body": "",
+      "url": "https://paper-api.alpaca.markets/v2/clock"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"timestamp\":\"2020-06-08T22:38:49.042731234-04:00\",\"is_open\":false,\"next_open\":\"2020-06-09T09:30:00-04:00\",\"next_close\":\"2020-06-09T16:00:00-04:00\"}",
+      "headers": {
+        "Server": "nginx/1.16.1",
+        "Date": "Tue, 09 Jun 2020 02:38:49 GMT",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Content-Length": "148",
+        "Connection": "keep-alive",
+        "Vary": "Origin"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
