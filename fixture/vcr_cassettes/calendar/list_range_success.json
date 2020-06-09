@@ -1,0 +1,31 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "APCA-API-KEY-ID": "***",
+        "APCA-API-SECRET-KEY": "***"
+      },
+      "method": "get",
+      "options": {
+        "recv_timeout": 30000
+      },
+      "request_body": "",
+      "url": "https://paper-api.alpaca.markets/v2/calendar?end=2020-03-01&start=2020-02-10"
+    },
+    "response": {
+      "binary": false,
+      "body": "[{\"date\":\"2020-02-10\",\"open\":\"09:30\",\"close\":\"16:00\",\"session_open\":\"0700\",\"session_close\":\"1900\"},{\"date\":\"2020-02-11\",\"open\":\"09:30\",\"close\":\"16:00\",\"session_open\":\"0700\",\"session_close\":\"1900\"},{\"date\":\"2020-02-12\",\"open\":\"09:30\",\"close\":\"16:00\",\"session_open\":\"0700\",\"session_close\":\"1900\"},{\"date\":\"2020-02-13\",\"open\":\"09:30\",\"close\":\"16:00\",\"session_open\":\"0700\",\"session_close\":\"1900\"},{\"date\":\"2020-02-14\",\"open\":\"09:30\",\"close\":\"16:00\",\"session_open\":\"0700\",\"session_close\":\"1900\"},{\"date\":\"2020-02-18\",\"open\":\"09:30\",\"close\":\"16:00\",\"session_open\":\"0700\",\"session_close\":\"1900\"},{\"date\":\"2020-02-19\",\"open\":\"09:30\",\"close\":\"16:00\",\"session_open\":\"0700\",\"session_close\":\"1900\"},{\"date\":\"2020-02-20\",\"open\":\"09:30\",\"close\":\"16:00\",\"session_open\":\"0700\",\"session_close\":\"1900\"},{\"date\":\"2020-02-21\",\"open\":\"09:30\",\"close\":\"16:00\",\"session_open\":\"0700\",\"session_close\":\"1900\"},{\"date\":\"2020-02-24\",\"open\":\"09:30\",\"close\":\"16:00\",\"session_open\":\"0700\",\"session_close\":\"1900\"},{\"date\":\"2020-02-25\",\"open\":\"09:30\",\"close\":\"16:00\",\"session_open\":\"0700\",\"session_close\":\"1900\"},{\"date\":\"2020-02-26\",\"open\":\"09:30\",\"close\":\"16:00\",\"session_open\":\"0700\",\"session_close\":\"1900\"},{\"date\":\"2020-02-27\",\"open\":\"09:30\",\"close\":\"16:00\",\"session_open\":\"0700\",\"session_close\":\"1900\"},{\"date\":\"2020-02-28\",\"open\":\"09:30\",\"close\":\"16:00\",\"session_open\":\"0700\",\"session_close\":\"1900\"}]",
+      "headers": {
+        "Server": "nginx/1.16.1",
+        "Date": "Tue, 09 Jun 2020 02:26:26 GMT",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Content-Length": "1373",
+        "Connection": "keep-alive",
+        "Vary": "Accept-Encoding"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
