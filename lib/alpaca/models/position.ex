@@ -5,7 +5,7 @@ defmodule Alpaca.Position do
   An position has the following methods we can call on it
   ```
   get/1
-  list/1
+  list/0
   delete_all/0
   delete/1
   ```
