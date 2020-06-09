@@ -1,0 +1,31 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "APCA-API-KEY-ID": "***",
+        "APCA-API-SECRET-KEY": "***"
+      },
+      "method": "get",
+      "options": {
+        "recv_timeout": 30000
+      },
+      "request_body": "",
+      "url": "https://paper-api.alpaca.markets/v2/assets/c33af055-182d-4391-b180-7c3f6ad92743"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"id\":\"c33af055-182d-4391-b180-7c3f6ad92743\",\"class\":\"us_equity\",\"exchange\":\"NYSE\",\"symbol\":\"KTP\",\"name\":\"Structured Products CorTS J.C. Penney Debs, 7 5/8% Cert.\",\"status\":\"inactive\",\"tradable\":false,\"marginable\":false,\"shortable\":false,\"easy_to_borrow\":false}",
+      "headers": {
+        "Server": "nginx/1.16.1",
+        "Date": "Tue, 09 Jun 2020 02:01:39 GMT",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Content-Length": "261",
+        "Connection": "keep-alive",
+        "Vary": "Origin"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
