@@ -1,0 +1,32 @@
+[
+  {
+    "request": {
+      "body": "{\"trade_confirm_email\":\"none\"}",
+      "headers": {
+        "APCA-API-KEY-ID": "***",
+        "APCA-API-SECRET-KEY": "***",
+        "content-type": "application/json"
+      },
+      "method": "patch",
+      "options": {
+        "recv_timeout": 30000
+      },
+      "request_body": "",
+      "url": "https://paper-api.alpaca.markets/v2/account/configurations"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"dtbp_check\":\"entry\",\"no_shorting\":false,\"pdt_check\":\"entry\",\"suspend_trade\":false,\"trade_confirm_email\":\"none\"}",
+      "headers": {
+        "Server": "nginx/1.16.1",
+        "Date": "Thu, 11 Jun 2020 01:11:28 GMT",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Content-Length": "113",
+        "Connection": "keep-alive",
+        "Vary": "Origin"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
