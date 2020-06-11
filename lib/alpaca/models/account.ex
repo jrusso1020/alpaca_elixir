@@ -9,7 +9,7 @@ defmodule Alpaca.Account do
   Retrieve your Alpaca trading account info
 
   ## Example
-    iex> {:ok, %{} = account} = Account.get()
+    iex> {:ok, %{} = account} = Alpaca.Account.get()
 
   Allows us to retrieve our own account information as a result tuple {:ok, %{}}
   if successful. If not success we will get back a result tuple {:error, {status: http_status_code, body: http_response_body}}
