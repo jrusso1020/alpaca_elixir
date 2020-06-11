@@ -38,7 +38,12 @@ defmodule Alpaca.ResponseMiddleware do
         {:ok, Jason.decode!(response.body, keys: :atoms)}
 
       status when status in 400..599 ->
-        {:error, %{status: status, body: Jason.decode!(response.body, keys: :atoms)}}
+        try do
+          {:error, %{status: status, body: Jason.decode!(response.body, keys: :atoms)}}
+        rescue
+          Jason.DecodeError ->
+            {:error, %{status: status, body: response.body}}
+        end
     end
   end
 
