@@ -4,7 +4,7 @@ defmodule AlpacaElixir.MixProject do
   def project do
     [
       app: :alpaca_elixir,
-      version: "0.1.6",
+      version: "0.1.7",
       elixir: "~> 1.10",
       preferred_cli_env: ["coveralls.html": :test],
       start_permanent: Mix.env() == :prod,
