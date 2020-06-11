@@ -18,5 +18,5 @@ defmodule Alpaca.Account.Activity do
   """
   use Alpaca.Resource,
     endpoint: "account/activities",
-    exclude: [:create, :edit, :delete, :delete_all]
+    exclude: [:create, :edit, :delete, :delete_all, :update]
 end

@@ -1,0 +1,32 @@
+[
+  {
+    "request": {
+      "body": "{\"name\":\"REALLLLLYYYYYYYYY LONG WATCHLIST NAME LONGER THAN 64 characters so this should error out\",\"symbols\":[\"AAPL\",\"GOOG\",\"TSLA\"]}",
+      "headers": {
+        "APCA-API-KEY-ID": "***",
+        "APCA-API-SECRET-KEY": "***",
+        "content-type": "application/json"
+      },
+      "method": "post",
+      "options": {
+        "recv_timeout": 30000
+      },
+      "request_body": "",
+      "url": "https://paper-api.alpaca.markets/v2/watchlists"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"code\":40010001,\"message\":\"name must be no more than 64 characters\"}",
+      "headers": {
+        "Server": "nginx/1.16.1",
+        "Date": "Thu, 11 Jun 2020 03:19:25 GMT",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Content-Length": "69",
+        "Connection": "keep-alive",
+        "Vary": "Origin"
+      },
+      "status_code": 422,
+      "type": "ok"
+    }
+  }
+]

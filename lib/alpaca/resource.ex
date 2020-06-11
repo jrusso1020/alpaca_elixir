@@ -78,6 +78,16 @@ defmodule Alpaca.Resource do
         end
       end
 
+      unless :update in unquote(exclude) do
+        @doc """
+        A function to update an existing resource using the Alpaca API
+        """
+        @spec update(String.t(), map()) :: {:ok, map()} | {:error, map()}
+        def update(id, params) do
+          Client.put(resource_url(id), params)
+        end
+      end
+
       unless :delete_all in unquote(exclude) do
         @doc """
         A function to delete all resources of a given type using the Alpaca API

@@ -15,5 +15,7 @@ defmodule Alpaca.Asset do
   The `list/1` method allows us to list all assets by calling `Alpaca.Asset.list(params)`.
   Where the params are a map, and possible options are defined in the Alpaca documentation.
   """
-  use Alpaca.Resource, endpoint: "assets", exclude: [:create, :edit, :delete, :delete_all]
+  use Alpaca.Resource,
+    endpoint: "assets",
+    exclude: [:create, :edit, :delete, :delete_all, :update]
 end

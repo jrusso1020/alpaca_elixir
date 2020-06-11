@@ -1,0 +1,31 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "APCA-API-KEY-ID": "***",
+        "APCA-API-SECRET-KEY": "***"
+      },
+      "method": "get",
+      "options": {
+        "recv_timeout": 30000
+      },
+      "request_body": "",
+      "url": "https://paper-api.alpaca.markets/v2/watchlists/fake_id"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"code\":40010001,\"message\":\"watchlist is required\"}",
+      "headers": {
+        "Server": "nginx/1.16.1",
+        "Date": "Thu, 11 Jun 2020 03:23:47 GMT",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Content-Length": "51",
+        "Connection": "keep-alive",
+        "Vary": "Origin"
+      },
+      "status_code": 422,
+      "type": "ok"
+    }
+  }
+]

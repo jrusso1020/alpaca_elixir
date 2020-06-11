@@ -91,6 +91,18 @@ defmodule Alpaca.Client do
   end
 
   @doc """
+  Issue a put request using the HTTP client
+
+  Accepts path which is the url path of the request, will be added to the end of the base_url
+  and a map of params which will be the body of the post request
+  """
+  @spec put(String.t(), map()) :: {:ok, map()} | {:error, map()}
+  def put(path, params \\ %{}) do
+    create()
+    |> Tesla.put(path, params)
+  end
+
+  @doc """
   Issue a delete request using the HTTP client
 
   Accepts path which is the url path of the request, will be added to the end of the base_url
