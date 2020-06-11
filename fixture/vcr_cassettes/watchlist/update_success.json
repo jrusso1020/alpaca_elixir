@@ -1,0 +1,32 @@
+[
+  {
+    "request": {
+      "body": "{\"name\":\"New Name of watchlist\"}",
+      "headers": {
+        "APCA-API-KEY-ID": "***",
+        "APCA-API-SECRET-KEY": "***",
+        "content-type": "application/json"
+      },
+      "method": "put",
+      "options": {
+        "recv_timeout": 30000
+      },
+      "request_body": "",
+      "url": "https://paper-api.alpaca.markets/v2/watchlists/593e74b2-9eb7-4278-95ba-400ea3dae0d5"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"id\":\"593e74b2-9eb7-4278-95ba-400ea3dae0d5\",\"account_id\":\"27102f1a-1bf0-4a2b-be65-aac7868edb41\",\"created_at\":\"2020-06-11T03:19:24.925844Z\",\"updated_at\":\"2020-06-11T03:30:10.64286Z\",\"name\":\"New Name of watchlist\",\"assets\":[]}",
+      "headers": {
+        "Server": "nginx/1.16.1",
+        "Date": "Thu, 11 Jun 2020 03:30:10 GMT",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Content-Length": "225",
+        "Connection": "keep-alive",
+        "Vary": "Origin"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

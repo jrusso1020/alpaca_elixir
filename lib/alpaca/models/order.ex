@@ -35,14 +35,14 @@ defmodule Alpaca.Order do
   The `get_by_client_order_id/1` method allows us to get a specific order by the client order id by calling
   `Alpaca.Order.get_by_client_order_id(client_order_id)`. Where client_order_id is the client order id on the order.
   """
-  use Alpaca.Resource, endpoint: "orders"
+  use Alpaca.Resource, endpoint: "orders", exclude: [:update]
 
   @doc """
   Retrieve an order by client order id
 
   ### Example
   ```
-    iex> {:ok, %{} = order} = Order.get_by_client_order_id(client_order_id)
+    iex> {:ok, %{} = order} = Alpaca.Order.get_by_client_order_id(client_order_id)
   ```
 
   Allows us to retrieve our an order as a result tuple `{:ok, %{}}`

@@ -2,7 +2,7 @@ defmodule Alpaca.Position do
   @moduledoc """
   A resource that allows us to perform operations on an Position
 
-  An position has the following methods we can call on it
+  A position has the following methods we can call on it
   ```
   get/1
   list/0
@@ -20,5 +20,5 @@ defmodule Alpaca.Position do
   The `delete/1` method allows us to close a specific position by calling `Alpaca.Position.delete(symbol)`.
   Where `symbol` is the symbol of the position we want to close.
   """
-  use Alpaca.Resource, endpoint: "positions", exclude: [:create, :edit]
+  use Alpaca.Resource, endpoint: "positions", exclude: [:create, :edit, :update]
 end
