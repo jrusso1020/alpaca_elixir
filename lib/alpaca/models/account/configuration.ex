@@ -1,6 +1,6 @@
-defmodule Alpaca.AccountConfiguration do
+defmodule Alpaca.Account.Configuration do
   @moduledoc """
-  A resource that allows us to query an AccountConfiguration from Alpaca
+  A resource that allows us to query an Account Configuration from Alpaca
   """
 
   alias Alpaca.Client
@@ -9,7 +9,7 @@ defmodule Alpaca.AccountConfiguration do
   Retrieve your Alpaca trading account configuration info
 
   ## Example
-    iex> {:ok, %{} = account_config} = Alpaca.AccountConfiguration.get()
+    iex> {:ok, %{} = account_config} = Alpaca.Account.Configuration.get()
 
   Allows us to retrieve our own account configuration info as a result tuple {:ok, %{}}
   if successful. If not success we will get back a result tuple {:error, {status: http_status_code, body: http_response_body}}
@@ -23,7 +23,7 @@ defmodule Alpaca.AccountConfiguration do
   Edit your Alpaca trading account configuration info
 
   ## Example
-    iex> {:ok, %{} = account_config} = Alpaca.AccountConfiguration.edit(%{trade_confirm_email: "none"})
+    iex> {:ok, %{} = account_config} = Alpaca.Account.Configuration.edit(%{trade_confirm_email: "none"})
 
   Allows us to edit our own account configuration info and return the new configuration as a result tuple {:ok, %{}}
   if successful. If not success we will get back a result tuple {:error, {status: http_status_code, body: http_response_body}}

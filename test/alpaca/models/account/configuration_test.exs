@@ -1,8 +1,8 @@
-defmodule Alpaca.AccountConfigurationTest do
+defmodule Alpaca.Account.ConfigurationTest do
   use ExUnit.Case, async: true
   use ExVCR.Mock, adapter: ExVCR.Adapter.Hackney
 
-  alias Alpaca.AccountConfiguration
+  alias Alpaca.Account.Configuration
 
   describe "get/0" do
     test "gets the account config successfully" do
@@ -13,7 +13,7 @@ defmodule Alpaca.AccountConfigurationTest do
                   no_shorting: false,
                   suspend_trade: false,
                   trade_confirm_email: "all"
-                }} = AccountConfiguration.get()
+                }} = Configuration.get()
       end
     end
   end
@@ -27,7 +27,7 @@ defmodule Alpaca.AccountConfigurationTest do
                   no_shorting: false,
                   suspend_trade: false,
                   trade_confirm_email: "none"
-                }} = AccountConfiguration.edit(%{trade_confirm_email: "none"})
+                }} = Configuration.edit(%{trade_confirm_email: "none"})
       end
     end
   end
