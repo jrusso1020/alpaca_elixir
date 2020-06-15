@@ -41,7 +41,8 @@ defmodule AlpacaElixir.MixProject do
       {:hackney, "~> 1.15.2"},
       {:ex_doc, "~> 0.22", only: :dev, runtime: false},
       {:jason, "~> 1.2"},
-      {:tesla, "~> 1.3.0"}
+      {:tesla, "~> 1.3.0"},
+      {:websockex, "~> 0.4.2"}
     ]
   end
 

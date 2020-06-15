@@ -34,7 +34,7 @@ defmodule Alpaca.Client do
   end
 
   @spec client_id(atom) :: String.t()
-  defp client_id(env_key \\ :client_id) do
+  def client_id(env_key \\ :client_id) do
     case Confex.get_env(:alpaca_elixir, env_key, System.get_env("ALPACA_CLIENT_ID")) || :not_found do
       :not_found -> raise MissingCredentialsError
       value -> value
@@ -42,7 +42,7 @@ defmodule Alpaca.Client do
   end
 
   @spec client_secret(atom()) :: String.t()
-  defp client_secret(env_key \\ :client_secret) do
+  def client_secret(env_key \\ :client_secret) do
     case Confex.get_env(:alpaca_elixir, env_key, System.get_env("ALPACA_CLIENT_SECRET")) ||
            :not_found do
       :not_found -> raise MissingCredentialsError
@@ -51,7 +51,7 @@ defmodule Alpaca.Client do
   end
 
   @spec api_host :: String.t()
-  defp api_host,
+  def api_host,
     do: Application.get_env(:alpaca_elixir, :api_host, System.get_env("ALPACA_API_HOST"))
 
   @doc """
