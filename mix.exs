@@ -15,8 +15,8 @@ defmodule AlpacaElixir.MixProject do
 
       # Docs
       name: "AlpacaElixir",
-      source_url: "https://github.com/jrusso1020/alpaca-elixir",
-      homepage_url: "https://github.com/jrusso1020/alpaca-elixir",
+      source_url: "https://github.com/jrusso1020/alpaca_elixir",
+      homepage_url: "https://github.com/jrusso1020/alpaca_elixir",
       docs: [
         main: "AlpacaElixir",
         extra: ["README.md"]
@@ -51,7 +51,7 @@ defmodule AlpacaElixir.MixProject do
       maintainers: ["James Russo"],
       files: ["lib/**/*.ex", "mix*", "*.md"],
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/jrusso1020/alpaca-elixir"}
+      links: %{"GitHub" => "https://github.com/jrusso1020/alpaca_elixir"}
     ]
   end
 end
