@@ -1,0 +1,31 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "APCA-API-KEY-ID": "***",
+        "APCA-API-SECRET-KEY": "***"
+      },
+      "method": "get",
+      "options": {
+        "recv_timeout": 30000
+      },
+      "request_body": "",
+      "url": "https://data.alpaca.markets/v1/last/stocks/AAPL"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"status\":\"success\",\"symbol\":\"AAPL\",\"last\":{\"price\":347.71,\"size\":100,\"exchange\":2,\"cond1\":12,\"cond2\":0,\"cond3\":0,\"cond4\":0,\"timestamp\":1592600755847000064}}",
+      "headers": {
+        "Server": "nginx/1.16.1",
+        "Date": "Sat, 20 Jun 2020 18:54:18 GMT",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Content-Length": "157",
+        "Connection": "keep-alive",
+        "Vary": "Origin"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
