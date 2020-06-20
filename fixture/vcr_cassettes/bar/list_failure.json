@@ -1,0 +1,31 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "APCA-API-KEY-ID": "***",
+        "APCA-API-SECRET-KEY": "***"
+      },
+      "method": "get",
+      "options": {
+        "recv_timeout": 30000
+      },
+      "request_body": "",
+      "url": "https://data.alpaca.markets/v1/bars/day"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"code\":40010001,\"message\":\"at least one symbol is required\"}",
+      "headers": {
+        "Server": "nginx/1.16.1",
+        "Date": "Sat, 20 Jun 2020 17:28:39 GMT",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Content-Length": "61",
+        "Connection": "keep-alive",
+        "Vary": "Origin"
+      },
+      "status_code": 422,
+      "type": "ok"
+    }
+  }
+]
