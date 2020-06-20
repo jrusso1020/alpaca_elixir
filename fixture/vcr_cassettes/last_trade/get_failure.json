@@ -1,0 +1,31 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "APCA-API-KEY-ID": "***",
+        "APCA-API-SECRET-KEY": "***"
+      },
+      "method": "get",
+      "options": {
+        "recv_timeout": 30000
+      },
+      "request_body": "",
+      "url": "https://data.alpaca.markets/v1/last/stocks/FFFFF"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"code\":40410000,\"message\":\"resource not found\"}",
+      "headers": {
+        "Server": "nginx/1.16.1",
+        "Date": "Sat, 20 Jun 2020 18:54:17 GMT",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Content-Length": "48",
+        "Connection": "keep-alive",
+        "Vary": "Origin"
+      },
+      "status_code": 404,
+      "type": "ok"
+    }
+  }
+]
