@@ -9,6 +9,11 @@ jobs:  # basic units of work in a run
 
     steps:  # commands that comprise the `build` job
       - checkout  # check out source code to working directory
+      - run:
+          name: Get dependencies
+          command: |
+            mix local.hex --force
+            mix local.rebar --force
       - restore_cache:  # restores saved mix cache
       # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
           keys:  # list of cache keys, in decreasing specificity
@@ -22,8 +27,6 @@ jobs:  # basic units of work in a run
       - run: # compile credo and its dependencies so that Mix does not try to compile the entire world in order to find the `credo` task.
           name: Get dependencies and check lint
           command: |
-            mix local.hex --force
-            mix local.rebar --force
             echo "--- Install Dependencies"
             mix deps.get
 
