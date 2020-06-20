@@ -54,6 +54,10 @@ defmodule Alpaca.Client do
   def api_host,
     do: Application.get_env(:alpaca_elixir, :api_host, System.get_env("ALPACA_API_HOST"))
 
+  @spec data_api_host :: String.t()
+  def data_api_host,
+    do: "https://data.alpaca.markets"
+
   @doc """
   Issue a get request using the HTTP client
 
@@ -61,8 +65,9 @@ defmodule Alpaca.Client do
   and a map of params which will become the query list for the get request
   """
   @spec get(String.t(), map()) :: {:ok, map()} | {:error, map()}
-  def get(path, params \\ %{}) do
-    create()
+  def get(path, params \\ %{}, opts \\ []) do
+    opts
+    |> create()
     |> Tesla.get(path, query: map_to_klist(params))
   end
 
@@ -73,8 +78,9 @@ defmodule Alpaca.Client do
   and a map of params which will be the body of the post request
   """
   @spec post(String.t(), map()) :: {:ok, map()} | {:error, map()}
-  def post(path, params \\ %{}) do
-    create()
+  def post(path, params \\ %{}, opts \\ []) do
+    opts
+    |> create()
     |> Tesla.post(path, params)
   end
 
@@ -85,8 +91,9 @@ defmodule Alpaca.Client do
   and a map of params which will be the body of the post request
   """
   @spec patch(String.t(), map()) :: {:ok, map()} | {:error, map()}
-  def patch(path, params \\ %{}) do
-    create()
+  def patch(path, params \\ %{}, opts \\ []) do
+    opts
+    |> create()
     |> Tesla.patch(path, params)
   end
 
@@ -97,8 +104,9 @@ defmodule Alpaca.Client do
   and a map of params which will be the body of the post request
   """
   @spec put(String.t(), map()) :: {:ok, map()} | {:error, map()}
-  def put(path, params \\ %{}) do
-    create()
+  def put(path, params \\ %{}, opts \\ []) do
+    opts
+    |> create()
     |> Tesla.put(path, params)
   end
 
@@ -108,8 +116,9 @@ defmodule Alpaca.Client do
   Accepts path which is the url path of the request, will be added to the end of the base_url
   """
   @spec delete(String.t()) :: {:ok, map()} | {:error, map()}
-  def delete(path) do
-    create()
+  def delete(path, opts \\ []) do
+    opts
+    |> create()
     |> Tesla.delete(path)
   end
 
@@ -120,10 +129,14 @@ defmodule Alpaca.Client do
   defp to_atom(atom) when is_atom(atom), do: atom
   defp to_atom(string), do: String.to_atom(string)
 
-  defp create() do
+  defp create(opts) do
+    api_host = Keyword.get(opts, :api_host, api_host())
+    additional_headers = Keyword.get(opts, :additional_headers, [])
+    headers = default_headers() ++ additional_headers
+
     middleware = [
-      {Tesla.Middleware.BaseUrl, api_host()},
-      {Tesla.Middleware.Headers, default_headers()},
+      {Tesla.Middleware.BaseUrl, api_host},
+      {Tesla.Middleware.Headers, headers},
       Tesla.Middleware.EncodeJson,
       Alpaca.ResponseMiddleware
     ]

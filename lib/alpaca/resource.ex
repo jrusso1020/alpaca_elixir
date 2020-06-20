@@ -34,6 +34,7 @@ defmodule Alpaca.Resource do
   defmacro __using__(options) do
     endpoint = Keyword.fetch!(options, :endpoint)
     exclude = Keyword.get(options, :exclude, [])
+    opts = Keyword.get(options, :opts, [])
 
     quote do
       alias Alpaca.Client
@@ -44,7 +45,7 @@ defmodule Alpaca.Resource do
         """
         @spec list(map()) :: {:ok, [map()]} | {:error, map()}
         def list(params \\ %{}) do
-          Client.get(base_url(), params)
+          Client.get(base_url(), params, unquote(opts))
         end
       end
 
@@ -54,7 +55,7 @@ defmodule Alpaca.Resource do
         """
         @spec get(String.t(), map()) :: {:ok, map()} | {:error, map()}
         def get(id, params \\ %{}) do
-          Client.get(resource_url(id), params)
+          Client.get(resource_url(id), params, unquote(opts))
         end
       end
 
@@ -64,7 +65,7 @@ defmodule Alpaca.Resource do
         """
         @spec create(map()) :: {:ok, map()} | {:error, map()}
         def create(params) do
-          Client.post(base_url(), params)
+          Client.post(base_url(), params, unquote(opts))
         end
       end
 
@@ -74,7 +75,7 @@ defmodule Alpaca.Resource do
         """
         @spec edit(String.t(), map()) :: {:ok, map()} | {:error, map()}
         def edit(id, params) do
-          Client.patch(resource_url(id), params)
+          Client.patch(resource_url(id), params, unquote(opts))
         end
       end
 
@@ -84,7 +85,7 @@ defmodule Alpaca.Resource do
         """
         @spec update(String.t(), map()) :: {:ok, map()} | {:error, map()}
         def update(id, params) do
-          Client.put(resource_url(id), params)
+          Client.put(resource_url(id), params, unquote(opts))
         end
       end
 
@@ -94,7 +95,7 @@ defmodule Alpaca.Resource do
         """
         @spec delete_all() :: {:ok, [map()]} | {:error, map()}
         def delete_all() do
-          with {:ok, response_body} <- Client.delete(base_url()) do
+          with {:ok, response_body} <- Client.delete(base_url(), unquote(opts)) do
             {:ok,
              Enum.map(response_body, fn item ->
                %{
@@ -113,14 +114,18 @@ defmodule Alpaca.Resource do
         """
         @spec(delete(String.t()) :: :ok, {:error, map()})
         def delete(id) do
-          with :ok <- Client.delete(resource_url(id)) do
+          with :ok <- Client.delete(resource_url(id), unquote(opts)) do
             :ok
           end
         end
       end
 
       @spec base_url :: String.t()
-      defp base_url, do: "/v2/#{unquote(endpoint)}"
+      defp base_url() do
+        version = Keyword.get(unquote(opts), :version, "v2")
+
+        "/#{version}/#{unquote(endpoint)}"
+      end
 
       @spec resource_url(String.t()) :: String.t()
       defp resource_url(resource_id), do: "#{base_url()}/#{resource_id}"
