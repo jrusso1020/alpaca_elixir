@@ -1,4 +1,4 @@
-defmodule Alpaca.Bar do
+defmodule Alpaca.Bars do
   @moduledoc """
   A resource that allows us to query the Bars data from Alpaca
   The bars API provides time-aggregated price and volume data.
