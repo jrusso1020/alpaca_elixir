@@ -5,7 +5,7 @@ defmodule Alpaca.Stream do
   A simple client implementation would be:
   ```
   defmodule AlpacaStreamClient do
-    use Alpaca.Stream
+    use Alpaca.Stream, url: "https://paper-api.alpaca.markets/stream"
 
     def start_link() do
       start_link(["account_updates", "trade_updates"])
@@ -18,6 +18,10 @@ defmodule Alpaca.Stream do
     end
   end
   ```
+
+  The `url` keyword is optional and if omitted will be defaulted to `"#{Client.api_host()}/stream"`
+  to key backwards compatibility.
+
   ## Supervision
   Alpaca.Stream uses WebSockex under the hood
 
@@ -41,7 +45,7 @@ defmodule Alpaca.Stream do
   ### Example
   ```
   defmodule TestStream do
-    use Alpaca.Stream
+    use Alpaca.Stream, url: "wss://data.alpaca.markets/stream"
 
     @impl Alpaca.Stream
     def handle_msg(msg, state) do
@@ -58,7 +62,9 @@ defmodule Alpaca.Stream do
               | {:close, WebSockex.close_frame(), new_state}
             when new_state: term
 
-  defmacro __using__([]) do
+  defmacro __using__(opts \\ []) do
+    url = Keyword.get(opts, :url, "#{Alpaca.Client.api_host()}/stream")
+
     quote do
       use WebSockex
 
@@ -88,7 +94,7 @@ defmodule Alpaca.Stream do
       ```
       """
       def start_link(streams) do
-        {:ok, pid} = WebSockex.start_link("#{Client.api_host()}/stream", __MODULE__, :no_state)
+        {:ok, pid} = WebSockex.start_link(unquote(url), __MODULE__, :no_state)
         authenticate(pid)
 
         unless streams == [] do
