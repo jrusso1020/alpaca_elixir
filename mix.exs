@@ -38,7 +38,7 @@ defmodule AlpacaElixir.MixProject do
       {:credo, "~> 1.4", only: [:dev, :test], runtime: false},
       {:excoveralls, "~> 0.10", only: :test},
       {:exvcr, "~> 0.11", only: :test},
-      {:hackney, "~> 1.15.2"},
+      {:hackney, "~> 1.16.0"},
       {:ex_doc, "~> 0.22", only: :dev, runtime: false},
       {:jason, "~> 1.2"},
       {:tesla, "~> 1.3.0"},
