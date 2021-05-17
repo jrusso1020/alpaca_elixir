@@ -89,6 +89,33 @@ jobs:  # basic units of work in a run
           key: v1-build-cache-{{ .Branch }}
           paths: "_build"
 
+  coverall_results:
+    parallelism: 1  # run only one instance of this job
+    docker:  # run the steps with Docker
+      - image: circleci/elixir:1.10.3  # ...with this image as the primary container; this is where all `steps` will run
+        environment:  # environment variables for primary container
+          MIX_ENV: test
+
+    working_directory: ~/app  # directory where steps will run
+
+    steps:  # commands that comprise the `build` job
+      - checkout  # check out source code to working directory
+      - run:
+          name: Get dependencies
+          command: |
+            mix local.hex --force
+            mix local.rebar --force
+
+      - restore_cache:  # restores saved mix cache
+      # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
+          keys:  # list of cache keys, in decreasing specificity
+            - v1-mix-cache-{{ .Branch }}-{{ checksum "mix.lock" }}
+            - v1-mix-cache-{{ .Branch }}
+            - v1-mix-cache
+      - restore_cache:  # restores saved build cache
+          keys:
+            - v1-build-cache-{{ .Branch }}
+            - v1-build-cache
       - run: mix coveralls.circle  # run all tests in project
 
 workflows:
@@ -97,3 +124,13 @@ workflows:
     jobs:
       - build_app_and_test
       - build_app_and_lint
+      - coverall_results:
+          requires:
+            - build_app_and_test
+          filters:
+            branches:
+              only:
+                - main
+
+
+
