@@ -12,7 +12,7 @@ defmodule Alpaca.WatchlistTest do
           symbols: ["AAPL", "GOOG", "TSLA"]
         }
 
-        assert {:ok, watchlist} = Watchlist.create(params)
+        assert {:ok, _watchlist} = Watchlist.create(params)
       end
     end
 

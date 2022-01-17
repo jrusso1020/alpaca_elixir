@@ -4,7 +4,7 @@ defmodule AlpacaElixir.MixProject do
   def project do
     [
       app: :alpaca_elixir,
-      version: "1.0.1",
+      version: "2.0.0",
       elixir: "~> 1.10",
       preferred_cli_env: ["coveralls.html": :test],
       start_permanent: Mix.env() == :prod,
@@ -34,15 +34,15 @@ defmodule AlpacaElixir.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:confex, "~> 3.4.0"},
-      {:credo, "~> 1.4", only: [:dev, :test], runtime: false},
-      {:excoveralls, "~> 0.10", only: :test},
-      {:exvcr, "~> 0.11", only: :test},
-      {:hackney, "~> 1.16.0"},
+      {:confex, "~> 3.5.0"},
+      {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
+      {:excoveralls, "~> 0.14", only: :test},
+      {:exvcr, "~> 0.13", only: :test},
+      {:hackney, "~> 1.18.0"},
       {:ex_doc, "~> 0.22", only: :dev, runtime: false},
-      {:jason, "~> 1.2"},
-      {:tesla, "~> 1.3.0"},
-      {:websockex, "~> 0.4.2"}
+      {:jason, "~> 1.3"},
+      {:tesla, "~> 1.4"},
+      {:websockex, "~> 0.4.3"}
     ]
   end
 

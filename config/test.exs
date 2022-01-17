@@ -1,4 +1,4 @@
-use Mix.Config
+import Config
 
 config :alpaca_elixir,
   api_host: System.get_env("ALPACA_API_HOST") || "https://paper-api.alpaca.markets",

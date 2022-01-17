@@ -9,10 +9,10 @@ defmodule Alpaca.ClockTest do
       use_cassette "clock/get_success" do
         assert {:ok,
                 %{
-                  timestamp: timestamp,
+                  timestamp: _timestamp,
                   is_open: false,
-                  next_open: next_open,
-                  next_close: next_close
+                  next_open: _next_open,
+                  next_close: _next_close
                 }} = Clock.get()
       end
     end

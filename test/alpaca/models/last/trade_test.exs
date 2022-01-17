@@ -7,7 +7,7 @@ defmodule Alpaca.TradeTest do
   describe "get/1" do
     test "gets the last trade successfully" do
       use_cassette "last_trade/get_success" do
-        assert {:ok, %{status: "success", symbol: "AAPL", last: last}} = Trade.get("AAPL")
+        assert {:ok, %{status: "success", symbol: "AAPL", last: _last}} = Trade.get("AAPL")
       end
     end
 

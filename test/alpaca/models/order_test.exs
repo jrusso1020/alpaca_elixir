@@ -9,7 +9,7 @@ defmodule Alpaca.OrderTest do
       use_cassette "order/list_success" do
         params = %{status: "all"}
 
-        assert {:ok, [order] = orders} = Order.list(params)
+        assert {:ok, [order]} = Order.list(params)
         assert not is_nil(order.id)
       end
     end
@@ -20,7 +20,7 @@ defmodule Alpaca.OrderTest do
       use_cassette "order/get_success" do
         id = "ebfc1c74-fd4a-46e1-b4e7-7f6f8ab1ef7a"
 
-        assert {:ok, %{id: ^id} = order} = Order.get(id)
+        assert {:ok, %{id: ^id}} = Order.get(id)
       end
     end
 
