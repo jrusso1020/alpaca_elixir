@@ -114,9 +114,7 @@ defmodule Alpaca.Resource do
         """
         @spec(delete(String.t()) :: :ok, {:error, map()})
         def delete(id) do
-          with :ok <- Client.delete(resource_url(id), unquote(opts)) do
-            :ok
-          end
+          Client.delete(resource_url(id), unquote(opts))
         end
       end
 

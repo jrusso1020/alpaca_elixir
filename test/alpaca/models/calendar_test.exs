@@ -8,7 +8,7 @@ defmodule Alpaca.CalendarTest do
     test "gets the list of calendar info successfully" do
       use_cassette "calendar/list_success" do
         assert {:ok, dates} = Calendar.list()
-        assert length(dates) == 15136
+        assert length(dates) == 15_136
       end
     end
 
