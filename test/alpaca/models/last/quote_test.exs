@@ -7,7 +7,7 @@ defmodule Alpaca.QuoteTest do
   describe "get/1" do
     test "gets the last quote successfully" do
       use_cassette "last_quote/get_success" do
-        assert {:ok, %{status: "success", symbol: "AAPL", last: last}} = Quote.get("AAPL")
+        assert {:ok, %{status: "success", symbol: "AAPL", last: _last}} = Quote.get("AAPL")
       end
     end
 
