@@ -9,7 +9,7 @@ by adding `alpaca_elixir` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:alpaca_elixir, "~> 2.0.0"}
+    {:alpaca_elixir, "~> 2.1.0"}
   ]
 end
 ```

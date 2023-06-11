@@ -151,10 +151,10 @@ defmodule Alpaca.Stream do
       defp authentication_frame do
         authentication_json =
           %{
-            action: "authenticate",
+            action: "auth",
             data: %{
-              key_id: Client.client_id(),
-              secret_key: Client.client_secret()
+              key: Client.client_id(),
+              secret: Client.client_secret()
             }
           }
           |> Jason.encode!()
