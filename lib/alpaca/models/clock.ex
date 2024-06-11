@@ -26,6 +26,6 @@ defmodule Alpaca.Clock do
   """
   @spec get() :: {:ok, map()} | {:error, map()}
   def get() do
-    Client.get("/v2/clock")
+    Client.get("/v1/clock")
   end
 end

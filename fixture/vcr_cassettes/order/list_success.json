@@ -11,7 +11,7 @@
         "recv_timeout": 30000
       },
       "request_body": "",
-      "url": "https://paper-api.alpaca.markets/v2/orders?status=all"
+      "url": "https://paper-api.alpaca.markets/v1/orders?status=all"
     },
     "response": {
       "binary": false,

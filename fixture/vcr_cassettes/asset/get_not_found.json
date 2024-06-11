@@ -11,7 +11,7 @@
         "recv_timeout": 30000
       },
       "request_body": "",
-      "url": "https://paper-api.alpaca.markets/v2/assets/FFFFF"
+      "url": "https://paper-api.alpaca.markets/v1/assets/FFFFF"
     },
     "response": {
       "binary": false,

@@ -16,6 +16,6 @@ defmodule Alpaca.Account do
   """
   @spec get() :: {:ok, map()} | {:error, map()}
   def get() do
-    Client.get("/v2/account")
+    Client.get("/v1/account")
   end
 end

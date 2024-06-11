@@ -11,7 +11,7 @@
         "recv_timeout": 30000
       },
       "request_body": "",
-      "url": "https://paper-api.alpaca.markets/v2/watchlists/fake_id"
+      "url": "https://paper-api.alpaca.markets/v1/watchlists/fake_id"
     },
     "response": {
       "binary": false,

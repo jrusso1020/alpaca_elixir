@@ -16,7 +16,7 @@ defmodule Alpaca.Account.Configuration do
   """
   @spec get() :: {:ok, map()} | {:error, map()}
   def get() do
-    Client.get("/v2/account/configurations")
+    Client.get("/v1/account/configurations")
   end
 
   @doc """
@@ -30,6 +30,6 @@ defmodule Alpaca.Account.Configuration do
   """
   @spec edit() :: {:ok, map()} | {:error, map()}
   def edit(params \\ %{}) do
-    Client.patch("/v2/account/configurations", params)
+    Client.patch("/v1/account/configurations", params)
   end
 end

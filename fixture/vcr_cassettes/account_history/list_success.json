@@ -11,7 +11,7 @@
         "recv_timeout": 30000
       },
       "request_body": "",
-      "url": "https://paper-api.alpaca.markets/v2/account/portfolio/history"
+      "url": "https://paper-api.alpaca.markets/v1/account/portfolio/history"
     },
     "response": {
       "binary": false,

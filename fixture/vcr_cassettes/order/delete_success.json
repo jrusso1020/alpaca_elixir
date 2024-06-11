@@ -11,7 +11,7 @@
         "recv_timeout": 30000
       },
       "request_body": "",
-      "url": "https://paper-api.alpaca.markets/v2/orders/d2ddd83c-63f5-42d4-801b-58e1be01327b"
+      "url": "https://paper-api.alpaca.markets/v1/orders/d2ddd83c-63f5-42d4-801b-58e1be01327b"
     },
     "response": {
       "binary": false,

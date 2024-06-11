@@ -51,7 +51,7 @@ defmodule Alpaca.Watchlist do
   if successful. If not success we will get back a result tuple `{:error, {status: http_status_code, body: http_response_body}}`
   """
   def add_asset(id, params \\ %{}) do
-    Client.post("/v2/watchlists/#{id}", params)
+    Client.post("/v1/watchlists/#{id}", params)
   end
 
   @doc """
@@ -66,6 +66,6 @@ defmodule Alpaca.Watchlist do
   if successful. If not success we will get back a result tuple `{:error, {status: http_status_code, body: http_response_body}}`
   """
   def remove_asset(id, symbol) do
-    Client.delete("/v2/watchlists/#{id}/#{symbol}")
+    Client.delete("/v1/watchlists/#{id}/#{symbol}")
   end
 end

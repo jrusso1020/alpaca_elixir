@@ -12,7 +12,7 @@
         "recv_timeout": 30000
       },
       "request_body": "",
-      "url": "https://paper-api.alpaca.markets/v2/watchlists"
+      "url": "https://paper-api.alpaca.markets/v1/watchlists"
     },
     "response": {
       "binary": false,

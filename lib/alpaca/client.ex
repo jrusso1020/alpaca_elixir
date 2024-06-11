@@ -137,6 +137,7 @@ defmodule Alpaca.Client do
     middleware = [
       {Tesla.Middleware.BaseUrl, api_host},
       {Tesla.Middleware.Headers, headers},
+      # Tesla.Middleware.Logger,
       Tesla.Middleware.EncodeJson,
       Alpaca.ResponseMiddleware
     ]
@@ -148,9 +149,9 @@ defmodule Alpaca.Client do
 
   @spec default_headers() :: %{String.t() => String.t()}
   defp default_headers() do
+    token = Base.encode64("#{client_id()}:#{client_secret()}")
     [
-      {"APCA-API-KEY-ID", client_id()},
-      {"APCA-API-SECRET-KEY", client_secret()}
+      {"authorization", "Basic #{token}"},
     ]
   end
 end

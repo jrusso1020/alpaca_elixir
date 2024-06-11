@@ -120,7 +120,7 @@ defmodule Alpaca.Resource do
 
       @spec base_url :: String.t()
       defp base_url() do
-        version = Keyword.get(unquote(opts), :version, "v2")
+        version = Keyword.get(unquote(opts), :version, "v1")
 
         "/#{version}/#{unquote(endpoint)}"
       end

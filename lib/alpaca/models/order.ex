@@ -50,6 +50,6 @@ defmodule Alpaca.Order do
   """
   @spec get_by_client_order_id(String.t()) :: {:ok, map()} | {:error, map()}
   def get_by_client_order_id(client_order_id) do
-    Client.get("/v2/orders:by_client_order_id", %{client_order_id: client_order_id})
+    Client.get("/v1/orders:by_client_order_id", %{client_order_id: client_order_id})
   end
 end
