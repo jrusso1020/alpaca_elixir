@@ -150,8 +150,9 @@ defmodule Alpaca.Client do
   @spec default_headers() :: %{String.t() => String.t()}
   defp default_headers() do
     token = Base.encode64("#{client_id()}:#{client_secret()}")
+
     [
-      {"authorization", "Basic #{token}"},
+      {"authorization", "Basic #{token}"}
     ]
   end
 end
