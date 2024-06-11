@@ -10,5 +10,5 @@ config :exvcr,
   custom_cassette_library_dir: "fixture/custom_cassettes",
   filter_sensitive_data: [],
   filter_url_params: false,
-  filter_request_headers: ["APCA-API-KEY-ID", "APCA-API-SECRET-KEY"],
+  filter_request_headers: ["authorization"],
   response_headers_blacklist: []

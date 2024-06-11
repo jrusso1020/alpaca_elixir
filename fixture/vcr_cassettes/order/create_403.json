@@ -3,8 +3,7 @@
     "request": {
       "body": "{\"qty\":10000000,\"side\":\"buy\",\"symbol\":\"TSLA\",\"time_in_force\":\"day\",\"type\":\"market\"}",
       "headers": {
-        "APCA-API-KEY-ID": "***",
-        "APCA-API-SECRET-KEY": "***",
+        "authorization": "***",
         "content-type": "application/json"
       },
       "method": "post",

@@ -3,8 +3,7 @@
     "request": {
       "body": "{\"qty\":1,\"side\":\"buy\",\"symbol\":\"FACEBOOK\",\"time_in_force\":\"day\",\"type\":\"market\"}",
       "headers": {
-        "APCA-API-KEY-ID": "***",
-        "APCA-API-SECRET-KEY": "***",
+        "authorization": "***",
         "content-type": "application/json"
       },
       "method": "post",

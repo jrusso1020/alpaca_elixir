@@ -3,8 +3,7 @@
     "request": {
       "body": "{\"name\":\"REALLLLLYYYYYYYYY LONG WATCHLIST NAME LONGER THAN 64 characters so this should error out\",\"symbols\":[\"AAPL\",\"GOOG\",\"TSLA\"]}",
       "headers": {
-        "APCA-API-KEY-ID": "***",
-        "APCA-API-SECRET-KEY": "***",
+        "authorization": "***",
         "content-type": "application/json"
       },
       "method": "post",

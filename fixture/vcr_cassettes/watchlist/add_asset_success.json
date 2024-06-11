@@ -3,8 +3,7 @@
     "request": {
       "body": "{\"symbol\":\"F\"}",
       "headers": {
-        "APCA-API-KEY-ID": "***",
-        "APCA-API-SECRET-KEY": "***",
+        "authorization": "***",
         "content-type": "application/json"
       },
       "method": "post",

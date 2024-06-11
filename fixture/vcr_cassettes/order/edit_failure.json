@@ -3,8 +3,7 @@
     "request": {
       "body": "{\"qty\":3}",
       "headers": {
-        "APCA-API-KEY-ID": "***",
-        "APCA-API-SECRET-KEY": "***",
+        "authorization": "***",
         "content-type": "application/json"
       },
       "method": "patch",
