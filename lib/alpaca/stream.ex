@@ -93,8 +93,8 @@ defmodule Alpaca.Stream do
       end
       ```
       """
-      def start_link(streams) do
-        {:ok, pid} = WebSockex.start_link(unquote(url), __MODULE__, :no_state)
+      def start_link(streams, opts \\ []) do
+        {:ok, pid} = WebSockex.start_link(unquote(url), __MODULE__, :no_state, opts)
         authenticate(pid)
 
         unless streams == [] do
@@ -152,10 +152,8 @@ defmodule Alpaca.Stream do
         authentication_json =
           %{
             action: "auth",
-            data: %{
-              key: Client.client_id(),
-              secret: Client.client_secret()
-            }
+            key: Client.client_id(),
+            secret: Client.client_secret()
           }
           |> Jason.encode!()
 
