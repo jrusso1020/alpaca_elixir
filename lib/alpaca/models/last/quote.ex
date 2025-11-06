@@ -13,8 +13,8 @@ defmodule Alpaca.Last.Quote do
   """
   alias Alpaca.Client
 
-  use Alpaca.Resource,
-    endpoint: "last_quote/stocks",
-    exclude: [:list, :create, :edit, :delete, :delete_all, :update],
-    opts: [version: "v1", api_host: Client.data_api_host()]
+  @spec get(String.t(), map()) :: {:ok, map()} | {:error, map()}
+  def get(symbol, params \\ %{}) do
+    Client.get("/v2/stocks/#{symbol}/quotes/latest", params, api_host: Client.data_api_host())
+  end
 end

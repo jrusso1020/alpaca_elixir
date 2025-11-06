@@ -11,7 +11,7 @@
         "recv_timeout": 30000
       },
       "request_body": "",
-      "url": "https://data.alpaca.markets/v1/last/stocks/FFFFF"
+      "url": "https://data.alpaca.markets/v2/stocks/FFFFF/trades/latest"
     },
     "response": {
       "binary": false,
