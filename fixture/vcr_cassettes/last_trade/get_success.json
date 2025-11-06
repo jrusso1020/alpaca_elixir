@@ -11,7 +11,7 @@
         "recv_timeout": 30000
       },
       "request_body": "",
-      "url": "https://data.alpaca.markets/v1/last/stocks/AAPL"
+      "url": "https://data.alpaca.markets/v2/stocks/AAPL/trades/latest"
     },
     "response": {
       "binary": false,
